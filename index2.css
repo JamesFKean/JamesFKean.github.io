@@ -1,0 +1,52 @@
+/* Richard Davies, Data Science for Economists */
+
+/* This is my second CSS file */
+
+
+/* Import a font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* The Secret Lives of Colour, Kassia St Clair: https://www.waterstones.com/book/the-secret-lives-of-colour/kassia-st-clair/9781473630833
+/* Set the background color for my page: */
+body{
+    background-color: rgb(114, 114, 114);
+ 
+}
+
+
+/* Choose the appearance of the tags, h1, h3 and p: */
+h1, h3, p{
+    color:rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+/* rule for    
+.myWeek1{
+    margin: auto;
+    max-width: 600px;
+    background-color: rgb(255, 255, 255);
+
+      
+    border-width: 5px;
+    border-style: dashed;
+    border-radius: 50px;
+    border-color: rgb(255, 255, 255);
+}
+
+
+/* Set the apperance of the class, chart */
+.chart{
+    background-color: rgb(255, 255, 255);
+    width:420px;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 25px;
+    border-color: red;
+    
+}
+    
+
+/* Set the apperance for a particular chart */
+#Chart1{
+    border-color: red;   
+}
