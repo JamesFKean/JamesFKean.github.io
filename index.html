@@ -35,6 +35,20 @@
         <p>Displays the price of cro</p>
         <div class="chart" id="Chart2"> </div>
     </div> 
+
+    <div class="myWeek1">
+        <h1> Week 2 Charts </h1>
+        <h3>IMF Lending outstanding in nominal USD</h3>
+        <p>Nominal credit outstanding to all members of the IMF in USD: source (IMF) </p>
+        <div class="chart" id="Chart3"> </div>
+
+    </div>
+    <div class="myWeek1">
+        <h3>IMF Lending outstanding inflation adjusted (Index 1984=100)</h3>
+        <p>Inflation adjusted credit outstanding to all members of the IMF in USD: source (IMF) </p>
+        <div class="chart" id="Chart4"> </div>
+
+    </div>
 </body>
 
 
@@ -42,10 +56,14 @@
     //Define charts:
     var myChart1 = "cryptochart1.json";
     var myChart2 = "chart2.json";
+    var myChart3 = "FTchart.json";
+    var myChart4 = "FTchart_adusted.json"
 
     // Embed charts:
     vegaEmbed('#Chart1', myChart1);
     vegaEmbed('#Chart2', myChart2);
+    vegaEmbed('#Chart3', myChart3);
+    vegaEmbed('#Chart4', myChart4);
 </script>
 
 </html>
