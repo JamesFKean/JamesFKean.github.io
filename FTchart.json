@@ -26,7 +26,7 @@
        "field": "Year",
        "type": "temporal",
        "axis": {
-         "title": null,
+         "title": "Year",
          "grid": false,
          "ticks": false,
          "labelAngle": 45}},
@@ -34,7 +34,7 @@
       "y": {
         "field": "billions",
         "type": "quantitative",
-        "title": "",
+        "title": "Billions of USD",
         "axis": {"grid": false}}
 }
 }
