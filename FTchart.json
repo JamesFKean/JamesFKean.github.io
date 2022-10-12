@@ -13,8 +13,11 @@
  "transform": [
   {"calculate": "datum.Totals/1000000000", "as":"billions"}
 ],
+
   "height": 350,
   "width": 350,
+  "background":"#fff0d8",
+  
   
 
   "mark": {

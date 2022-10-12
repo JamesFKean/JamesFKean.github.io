@@ -8,13 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Title for the page -->
     <title>Document</title>
 
-    <!-- Link to my style sheet -->
     <link rel="stylesheet" href="index3.css">
 
-    <!--The next three lines allow the Vega embed-->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
@@ -23,10 +20,25 @@
 
 
 <body>
-    <!-- A div that contains a group of items for week 1. Can be useful for setting background colours etc.  -->
-    <div class="myWeek1">
-        <h1>James Kean Data Science</h1>
+    
+    <hr/>
+    <div class="buttonwrapper">
+    <div class="header">
         
+        <a href="project.html" class="button1-underline-animation"> Portfolio</a>
+        <a href="about.html" class="button1-underline-animation"> About</a>
+        <a href="CV.html" class="button1-underline-animation"> CV</a>  
+    
+    </div>
+    <hr/>
+
+    <div class="headercontainer">
+        <h2>James Kean Data Science</h2>
+    </div>
+</div>
+    
+    
+    <div class="content">
         <h3>Bitcoin price range chart</h3>
         <p>Displays the price of bitcoin</p>
         <div class="chart" id="Chart1"></div>
@@ -36,14 +48,22 @@
         <div class="chart" id="Chart2"> </div>
     </div> 
 
-    <div class="myWeek1">
-        <h1> Week 2 Charts </h1>
+<hr/>
+<h4> Week 2 Charts </h4>
+<hr/>
+    <div class="content">
+        
+
+
         <h3>IMF Lending outstanding in nominal USD</h3>
         <p>Nominal credit outstanding to all members of the IMF in USD: source (IMF) </p>
-        <div class="chart" id="Chart3"> </div>
+        <div class="chart" id="Chart3" id="Chart4">
+
+        </div>
+        </div>
 
     </div>
-    <div class="myWeek1">
+    <div class="content">
         <h3>IMF lending outstanding inflation adjusted (Inflation index 1984=100)</h3>
         <p>Inflation adjusted credit outstanding to all members of the IMF in USD: source (IMF) </p>
         <div class="chart" id="Chart4"> </div>
