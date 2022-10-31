@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+      "text": "Apple stock % annual change",
+      "subtitle":"",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+  },
+"config":{
+  "background": "#fff0d8"},
+"data": 
+    {
+        "values":[{"Year": "1981", "Percent Gain or Loss": -35.16}, {"Year": "1982", "Percent Gain or Loss": 35.03}, {"Year": "1983", "Percent Gain or Loss": -18.41}, {"Year": "1984", "Percent Gain or Loss": 19.49}, {"Year": "1985", "Percent Gain or Loss": -24.46}, {"Year": "1986", "Percent Gain or Loss": 84.09}, {"Year": "1987", "Percent Gain or Loss": 107.41}, {"Year": "1988", "Percent Gain or Loss": -4.17}, {"Year": "1989", "Percent Gain or Loss": -12.42}, {"Year": "1990", "Percent Gain or Loss": 21.99}, {"Year": "1991", "Percent Gain or Loss": 31.1}, {"Year": "1992", "Percent Gain or Loss": 5.99}, {"Year": "1993", "Percent Gain or Loss": -51.05}, {"Year": "1994", "Percent Gain or Loss": 33.33}, {"Year": "1995", "Percent Gain or Loss": -18.27}, {"Year": "1996", "Percent Gain or Loss": -34.51}, {"Year": "1997", "Percent Gain or Loss": -37.13}, {"Year": "1998", "Percent Gain or Loss": 211.9}, {"Year": "1999", "Percent Gain or Loss": 151.15}, {"Year": "2000", "Percent Gain or Loss": -71.06}, {"Year": "2001", "Percent Gain or Loss": 47.23}, {"Year": "2002", "Percent Gain or Loss": -34.57}, {"Year": "2003", "Percent Gain or Loss": 49.13}, {"Year": "2004", "Percent Gain or Loss": 201.36}, {"Year": "2005", "Percent Gain or Loss": 123.26}, {"Year": "2006", "Percent Gain or Loss": 18.01}, {"Year": "2007", "Percent Gain or Loss": 133.47}, {"Year": "2008", "Percent Gain or Loss": -56.91}, {"Year": "2009", "Percent Gain or Loss": 146.9}, {"Year": "2010", "Percent Gain or Loss": 53.07}, {"Year": "2011", "Percent Gain or Loss": 25.56}, {"Year": "2012", "Percent Gain or Loss": 31.4}, {"Year": "2013", "Percent Gain or Loss": 5.42}, {"Year": "2014", "Percent Gain or Loss": 37.72}, {"Year": "2015", "Percent Gain or Loss": -4.64}, {"Year": "2016", "Percent Gain or Loss": 10.03}, {"Year": "2017", "Percent Gain or Loss": 46.11}, {"Year": "2018", "Percent Gain or Loss": -6.79}, {"Year": "2019", "Percent Gain or Loss": 86.16}, {"Year": "2020", "Percent Gain or Loss": 80.75}, {"Year": "2021", "Percent Gain or Loss": 33.82}]
+},
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Year", "type": "temporal"},
+    "y": {"field": "Percent Gain or Loss", "type": "quantitative"}
+    }
+}
+
