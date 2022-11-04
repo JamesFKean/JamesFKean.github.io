@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title" : {
+    "text": "Trade in Goods: Imports",
+    "anchor" : "start"
+  },
+
+  "config": {
+    "background": "#fff0d8"},
+"height": 150,
+"width": 200,
+  "data": {"url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/data_ons-BQKO.json", "format": {"type": "json", "property": "years"}},
+  "mark": {
+    "type": "bar"},
+  "encoding": {
+
+    "x": 
+    {"field": "date", 
+    "type": "temporal", 
+    "title": "Year",
+    "axis":{
+    "labelSeparation":10,
+    "domainColor": "#fffff",
+    "gridColor": "#00000017"}},
+     "y": 
+     {"field": "value",  
+      "type": "quantitative", 
+      "title": "Imports in £m",
+      "axis": {
+      "gridColor": "#00000017"
+      }}
+  }
+}

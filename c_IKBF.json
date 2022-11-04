@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title" : {
+    "text": "Trade in Services: Imports",
+    "anchor" : "start"
+  },
+
+  "config": {
+    "background": "#fff0d8"},
+"height": 150,
+"width": 200,
+  "data": {"url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/data_ons-IKBF.json", "format": {"type": "json", "property": "months"}},
+  "mark": {
+    "type": "bar"},
+  "encoding": {
+
+    "x": 
+    {"field": "year", 
+    "type": "temporal", 
+    "title": "Year",
+    "axis":{
+    "labelSeparation":10,
+    "domainColor": "#fffff",
+    "gridColor": "#00000017"}},
+     "y": 
+     {"field": "value",  
+      "type": "quantitative", 
+      "title": "Services Imported in £m",
+      "axis": {
+      "gridColor": "#00000017"
+      }}
+  }
+}

@@ -8,12 +8,12 @@
 /* Book on colour = Joseph Albers - Interaction of Colour */
 
 body{
-    background-color: #1c2329;
+    background-color: #fff0d8;
  }
 
 
 .headercontainer{
-    background-color: #fe921f00;
+    background-color: #fff0d8;
     font-family: 'lato', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
@@ -37,13 +37,18 @@ text-align: center;
     margin: 0 auto;
     display: block;
     padding: 10px;
+    display: inline-block;
 }
 
 
 h1, p{
-    color:#adb7bd;
+    color:#3f3f3f;
     font-family: 'lato', sans-serif;
     text-align: left;
+    font-weight: lighter;
+    font-size:small;
+    text-transform: none;
+    display: block
 }
 
 h2{
@@ -57,12 +62,17 @@ h2{
    
 }
 
-
+.stickytop{
+    position: -webkit-sicky;
+    position: sticky;
+    top: 0;
+    background-color: #fff0d8;
+}
 
 h3{
     font-family: 'lato', sans-serif;
     font-weight:bold;
-    color: #ffffff;
+    color: #3f3f3f;
     letter-spacing: 1px;
     text-transform: uppercase;
     text-align: left;
@@ -79,12 +89,26 @@ h4{
 
 }
     
-.content{
+.content-holder{
     margin: auto;
-    width: 50%;
-    background-color: #1c2329;
+    width: 75%;
+    background-color: #fff0d8;
     border-radius: 2px;
     border-width: 5px;
+    border-style: none;
+    border-color: rgb(100, 100, 100);
+    padding: 0px 0px 30px;
+    text-align: center;
+}
+
+.ONS-holder{
+    display: flex; 
+    justify-content: space-between;
+    margin: auto;
+    width: 75%;
+    background-color: #fff0d8;
+    border-radius: 0px;
+    border-width: 0px;
     border-style: none;
     border-color: rgb(100, 100, 100);
     padding: 0px 0px 30px;
@@ -94,18 +118,45 @@ h4{
 
 .chart{
     display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #fff0d8;
     border-width: 3px;
     border-style: solid;
     border-radius: 0px;
-    border-image :  linear-gradient(#fe921f , #1c2329) 30;
-    
+    border-image :  linear-gradient(135deg, #f2ca9e , #ffffff) 30;
+    margin: 10px 10px 10px
 }
  
+.alctt{
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: left;
+margin: auto;
+width: 75%
+}
 
+.altxt{
+    display: inline-block;
+    padding: 0px 20px 0px;
+    text-align: left;
+    margin: auto;
+    width: 100%
+}
+.alhlr{
+    display: flex;
+    flex-direction: column;
+}
 
+.albtw{
+    display: flex;
+    flex-direction: column
+}
+.albutton{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
 .button1-underline-animation {
 
     position: relative;
@@ -130,7 +181,7 @@ h4{
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: white;
+    background-color: #fe921f;
     transform-origin: bottom right;
     transition: transform 0.1s ease-out;
     transform: scaleX(0);
@@ -140,6 +191,8 @@ h4{
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+
+
 /*#button1:after{ 
     display:block;
     border-bottom: solid 2px rgb(196, 101, 13);
@@ -169,4 +222,16 @@ h4{
     line-height: 12px;
     letter-spacing: 1px;
     text-transform: uppercase;
+}
+
+.content-holder{
+    margin: auto;
+    width: 50%;
+    background-color: #fff0d8;
+    border-radius: 2px;
+    border-width: 5px;
+    border-style: none;
+    border-color: rgb(100, 100, 100);
+    padding: 0px 0px 30px;
+    text-align: center;
 }
