@@ -55,7 +55,7 @@ h1, p{
     font-family: 'lato', sans-serif;
     text-align: left;
     font-weight: lighter;
-    font-size:small;
+    font-size: 2vmin;
     text-transform: none;
     display: block
 }
@@ -85,6 +85,7 @@ h3{
     letter-spacing: 1px;
     text-transform: uppercase;
     text-align: left;
+    font-size: 3vmin;
 }
 
 h4{
@@ -163,7 +164,7 @@ width: 75%
     padding: 0px 20px 0px;
     text-align: left;
     margin: auto;
-    width: 100%
+    width: 50%
 }
 .alhlr{
     display: flex;
