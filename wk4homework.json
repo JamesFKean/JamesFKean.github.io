@@ -8,6 +8,9 @@
       "anchor": "start",
       "color": "black"
   },
+
+"width": 345,
+"height": 345,
 "config":{
   "background": "#fff0d8"},
 "data": 
