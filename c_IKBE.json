@@ -11,7 +11,9 @@
 "width": 200,
   "data": {"url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/data_ons-IKBE.json", "format": {"type": "json", "property": "months"}},
   "mark": {
-    "type": "bar"},
+    "type": "bar",
+    "color": "#fe921f"
+},
   "encoding": {
 
     "x": 

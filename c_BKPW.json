@@ -11,7 +11,9 @@
   "width": 200,
     "data": {"url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/data_ons-BKPW.json", "format": {"type": "json", "property": "years"}},
     "mark": {
-      "type": "line"},
+      "type": "line",
+      "color": "#fe921f"
+  },
     "encoding": {
   
       "x": 

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stock prices of 5 Tech Companies over Time.",
+  "title": {
+    "align": "left",
+    "anchor": "start",
+    "text": "Number of Secure Internet Servers Per Million People by Region",
+    "subtitle": "Source: World Bank"
+  },
+  "config": {
+    "legend": {
+      "orient": "left"
+    }
+  },
+"width": 305,
+"height": 340,
+"background": "#fff0d8",
+  "data": {"url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/Dataserver.json"},
+  "mark":{
+    "type": "line",
+    "point": {
+      "filled": false,
+      "fill": "white"
+    }},
+  "encoding": {
+    "x": {"field": "Year", "type": "quantitative"},
+    "y": {"field": "Secure Internet servers (per 1 million people)", "type": "quantitative", "scale": {"type": "sqrt"}, "title": "Number of Servers"},
+    "color": {"field": "Country Name", "type": "nominal", "scale": {"domain": ["Sub-Saharan Africa", "South Asia", "North America", "Middle East & North Africa", "Latin America & Caribbean", "Europe & Central Asia", "East Asia & Pacific"], "range": ["gold", "red", "orange", "darkorange", "darkred"]}},
+"tooltip":[{
+  "field": "Year", "type": "quantitative"},
+  {"field": "Country Name", "type": "nominal"},
+  {"field": "Secure Internet servers (per 1 million people)", "type": "nominal"}
+  ]
+  }
+}

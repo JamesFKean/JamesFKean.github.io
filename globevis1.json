@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width":550,
+  "height":350,
+  "data": {
+    "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/custom.geo.json",
+    "format": {
+      "property": "features" }},
+"projection": {
+  "type": "naturalEarth1"
+},
+"title": {
+  "text": "GeoJason Globe Visualisation",
+  "subtitle":"",
+  "subtitleFontStyle":"italic",
+  "subtitleFontSize":10,
+  "anchor": "start",
+  "color": "black"
+},
+
+  "mark": {
+    "type": "geoshape",
+    "fill": "#e6ad70",
+    "stroke": "black",
+    "strokeWidth": 0.2
+  },
+  "config": {
+"background":"#fff0d8"
+
+  },
+  
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "properties.name_en", "type": "nominal", "title": "Country"
+      }
+    ]
+  }
+}
