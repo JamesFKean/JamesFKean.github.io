@@ -1,0 +1,62 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A scatterplot showing body mass and flipper lengths of penguins.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/kmeans_eng.csv"
+  },
+  "title": {
+    "text": "China and Everyone Else: 40 Years of Energy and GDP Growth",
+    "subtitle": "Source World Bank & BP",
+    "subtitleFontSize": 10,
+    "anchor": "start"
+  },
+  "height": 340,
+  "width": 440,
+  "background": "#fff0d8",
+  "transform": [
+    {
+      "calculate": "{'1': 'High gorwth','2': 'Moderate less effecient growth', '0': 'Low growth', '3': 'China', '4': 'Moderate growth',}[datum.Cluster]",
+      "as": "Growth Group"
+    }
+  ],
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "eng_mean",
+      "type": "quantitative",
+      "title": "Mean Rate of % Change in Energy Consumption",
+      "scale": {"zero": false}
+    },
+    "y": {
+      "field": "gdp_mean",
+      "type": "quantitative",
+      "title": "Mean Rate of % Change in GDP Growth",
+      "scale": {"zero": false}
+    },
+    "color": {
+      "field": "Growth Group",
+      "type": "nominal",
+      "scale": {"range": ["red", "black", "purple", "orange", "darkblue"]},
+      "legend": {
+        "orient": "bottom-left",
+        "direction": "horizontal",
+        "offset": -49
+      }
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {
+        "field": "eng_mean",
+        "type": "nominal",
+        "title": "Mean rate of change in energy consumption",
+        "format": ".2f"
+      },
+      {
+        "field": "gdp_mean",
+        "type": "nominal",
+        "title": "Mean rate of change in GDP Growth",
+        "format": ".2f"
+      }
+    ]
+  }
+}
