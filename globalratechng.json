@@ -1,8 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {
-    "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/heatmapdtafinalV2.csv"
-  },
+  
   "background": "#fff0d8",
   "width": 340,
   "height": 340,
@@ -18,7 +16,9 @@
     ],
     "subtitleFontSize": 10
   },
-  
+  "data": {
+    "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/heatmapdtafinalV2.csv"
+  },
   "params": [ {
       "name": "Means",
       "bind": {"input": "checkbox"}
