@@ -1,0 +1,129 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/heatmapdtafinalV2.csv"
+  },
+  "background": "#fff0d8",
+  "width": 340,
+  "height": 340,
+  "title": {
+    "align": "left",
+    "text": "Rate of change in energy consumption against GDP growth annualy for 52 countries",
+    "fontSize": 11,
+    "anchor": "start",
+    "subtitle": [
+      "Observations from 1981-2021. Grey lines repesent means of each growth rate.", "Orange lines represent Chinese growth rate means.",
+      
+      "Source: World Bank and BP"
+    ],
+    "subtitleFontSize": 10
+  },
+  
+  "params": [ {
+      "name": "Means",
+      "bind": {"input": "checkbox"}
+    }],
+  "layer": [
+    { 
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "bin": {"maxbins": 30},
+          "field": "GDP Growth Rates",
+          "type": "quantitative",
+          "axis": {
+            "labelSeparation": {"expr": "20"},
+            "format": "%",
+            "title": "GDP Growth",
+            "grid": true,
+            "gridWidth": 0.1,
+            "gridColor": "black"
+          }
+        },
+        "y": {
+          "bin": {"maxbins": 20},
+          "field": "pct_chn_exa",
+          "type": "quantitative",
+          "axis": {
+            "labelSeparation": {"expr": "3"},
+            "format": "%",
+            "title": "Change in Energy Consumption",
+            "grid": true,
+            "gridWidth": 0.1,
+            "gridColor": "black"
+          }
+        },
+        "color": {
+          "aggregate": "count",
+          "type": "quantitative",
+          "scale": {
+            "range": ["black", "darkorange", "orange", "gold", "goldred", "red"]
+          },
+          "legend": {"title": "Observations"}
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "strokeDash": [4, 2],
+        "strokeCap": "butt",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "aggregate": "mean",
+          "field": "GDP Growth Rates",
+          "type": "quantitative"
+        },
+        "color": {"value": "darkgrey"},
+        "opacity":{"condition": { "test": {"param": "Means"} }, "value": 0}
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "strokeDash": [4, 2],
+        "strokeCap": "butt",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "y": {
+          "aggregate": "mean",
+          "field": "pct_chn_exa",
+          "type": "quantitative"
+        },
+        "color": {"value": "darkgrey"},
+        "opacity":{"condition": { "test": {"param": "Means"} }, "value": 0}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.Country =='China'"}],
+      "mark": {
+        "type": "rule",
+        "strokeDash": [4, 2],
+        "strokeCap": "butt",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "y": {"aggregate": "mean", "field": "pct_chn_exa"},
+        "opacity":{"condition": { "test": {"param": "Means"} }, "value": 0},
+        "color": {"value": "darkorange"}
+        
+      }
+    },
+    {
+      "transform": [{"filter": "datum.Country =='China'"}],
+      "mark": {
+        "type": "rule",
+        "strokeDash": [4, 2],
+        "strokeCap": "butt",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {"aggregate": "mean", "field": "GDP Growth Rates"}, "opacity":{"condition": { "test": {"param": "Means"} }, "value": 0},
+        "color": {"value": "darkorange"}
+      }
+    }
+  ]
+}
