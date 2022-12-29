@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title":{"text": "Bubble Chart of Energy Consumption and Energy Grwoth",
+  "anchor": "start",
+  "fontSize" :10,
+  "subtitle": "Where Bubble Size Shows Change in CO2 Output For the Same Period. Source BP and The World Bank",
+  "subtitleFontSize": 8},
+ "config": {"background": "#fff0d8"},
+ "width": 340,
+ "height": 340,
+  "data": {
+    "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/scatterbubble.json"
+  },
+
+  "mark": "circle",
+  "encoding": {
+    "y": {"field": "Exajoules", "type": "quantitative", "title": "% Change in Energy Consumption"},
+    "x": {"field": "GDP Growth", "type": "quantitative"},
+    "size": {"field": "CO2 Output Millions of Tonnes", "type": "quantitative"},
+    "color": {
+      "field": "CO2 Output Millions of Tonnes",
+      "type": "quantitative",
+      "scale": {"range": ["Orange", "Red", "Black"] },
+      "legend": {"title": "% Change in CO2"}
+    },
+  "tooltip": [{"field": "Year", "type": "quantitative", "title": "Year"},
+    {"field": "GDP Growth", "type": "quantitative", "title": "% GDP Growth"},
+    {"field": "Exajoules", "type": "quantitative", "title": "% Change in Energy Consumption"},
+    {"field": "CO2 Output Millions of Tonnes", "type": "quantitative", "title": "% CO2 Output"}] }
+}
