@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "China Geojson",
+    "anchor": "start",
+    "subtitle": "Source: GADM"
+  },
+  "width": 500,
+  "height": 340,
+  "config": {"background": "#fff0d8"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/Chinageoshape.json",
+    "format": {"property": "features", "type": "json"}
+  },
+  "mark": {
+    "type": "geoshape",
+    "stroke": "black",
+    "strokeWidth": 0.2,
+    "color": "#c67723"
+  },
+  "projection": {"type": "mercator"},
+  "encoding": {"tooltip": [{"field": "properties.NAME_1", "title": "Province"}]}
+}
