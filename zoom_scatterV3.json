@@ -1,0 +1,256 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/zoom_eng_scatterV4.csv"
+    },
+    "height": 340,
+    "width": 340,
+    "background": "fff0d8",
+    "title": {
+      "text": "Global Rates of Change: China in Focus Interactive Chart",
+      "anchor": "start",
+      "subtitle": "Source: World Bank. Black lines indicate year mean.",
+      "subtitleFontSize": 10
+    },
+    "params": [
+      {
+        "name": "year",
+        "value": 1991,
+        "bind": {
+          "input": "range",
+          "min": 1991,
+          "max": 2014,
+          "step": 1,
+          "name": "Year"
+        }
+      }
+    ],
+    "layer": [
+      {
+        "transform": [
+          {"calculate": "toNumber(year)", "as": "yearS"},
+          {"filter": "datum.yearS == datum.Year"}
+        ],
+        "mark": {"type": "rule", "strokeDash": [8,4], "strokeCap":"butt"},
+        "encoding": {
+          "x": {
+            "aggregate": "mean",
+            "field": "chng_eng",
+            "title": "Change in Energy Consumption"
+          },
+          "color": {"value": "grey"},
+          "tooltip": {
+            "field": "chng_eng",
+            "aggregate": "mean",
+            "format": "%",
+            "title": "mean"
+          }
+        }
+      },
+      {
+        "transform": [
+          {"calculate": "toNumber(year)", "as": "yearS"},
+          {"filter": "datum.yearS == datum.Year"}
+        ],
+        "mark": {"type": "rule", "strokeDash": [8,4], "strokeCap":"butt"},
+        "encoding": {
+          "y": {
+            "aggregate": "mean",
+            "field": "chng_gdp",
+            "title": "Change in GDP"
+          },
+          "color": {"value": "grey"}
+        }
+      },
+      {
+        "params": [{"name": "grid", "select": "interval", "bind": "scales"}],
+        "transform": [
+          {"calculate": "toNumber(year)", "as": "yearS"},
+          {"filter": "datum.yearS == datum.Year"}
+        ],
+        "mark": "circle",
+        "encoding": {
+          "x": {
+            "field": "chng_eng",
+            "type": "quantitative",
+            "scale": {"domain": [-0.15, 0.2]},
+            "axis": {"format": "%"}
+          },
+          "y": {
+            "field": "chng_gdp",
+            "type": "quantitative",
+            "scale": {"domain": [-0.12, 0.13]},
+            "axis": {"format": "%"}
+          },
+          "size": {
+            "field": "C02",
+            "type": "quantitative",
+            "legend": {
+              "symbolFillColor": "darkred",
+              "symbolStrokeColor": "darkred"
+            },
+            "title": "Total CO2 Output",
+            "scale": {"type": "sqrt"}
+          },
+          "color": {
+            "field": "Continent",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "Europe",
+                "Africa",
+                "South America",
+                "Asia",
+                "Oceania",
+                "North America",
+                "China"
+              ],
+              "range": [
+                "Orange",
+                "darkorange",
+                "#7C521F",
+                "#997C2E",
+                "#B5A437",
+                "#A46C4C",
+                "darkred"
+              ]
+            },
+            "legend": {
+              "orient": "bottom-left",
+              "direction": "horizontal",
+              "offset": -49
+            }
+          },
+          "fillOpacity": {"field": "China", "scale": {"range": [1, 0.7]}},
+          "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {"field": "Year", "type": "quantitative"},
+            {
+              "field": "chng_eng",
+              "type": "quantitative",
+              "format": "0.3f",
+              "title": "Change in Energy Consumption"
+            },
+            {
+              "field": "chng_gdp",
+              "type": "quantitative",
+              "format": "0.3f",
+              "title": "Change in GDP"
+            }
+          ]
+        }
+      },
+      {
+        "layer": [
+          {
+            "params": [
+              {
+                "name": "hover",
+                "select": {
+                  "type": "point",
+                  "fields": ["Country"],
+                  "toggle": true,
+                  "on": "mouseover"
+                }
+              },
+              {
+                "name": "click",
+                "select": {"type": "point", "fields": ["Country"]}
+              }
+            ],
+            "transform": [{"filter": {"param": "hover", "empty": false}}],
+            
+            "mark": {"type": "line", "point": true, "interpolate": "natural"},
+            "encoding": {
+              "x": {"field": "chng_eng", "type": "quantitative"},
+              "y": {"field": "chng_gdp", "type": "quantitative"},
+              "color": {
+                "condition": {"test": {"param": "hover"}, "value": "darkorange"}
+              },
+              
+              "detail": {"field": "Country"},
+              "order": {"field": "Year"},
+              "opacity": {
+                "condition": {"test": {"param": "hover"}, "value": 0.8},
+                "value": 0
+              },
+              "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {"field": "Year", "type": "quantitative"},
+            {
+              "field": "chng_eng",
+              "type": "quantitative",
+              "format": "0.3f",
+              "title": "Change in Energy Consumption"
+            },
+            {
+              "field": "chng_gdp",
+              "type": "quantitative",
+              "format": "0.3f",
+              "title": "Change in GDP"
+            }
+          ]
+            }
+          }
+          
+        ]
+      },
+      {
+        "layer": [
+          {
+            "params": [
+              {
+                "name": "hovered",
+                "select": {
+                  "type": "point",
+                  "fields": ["Country"],
+                  "toggle": true,
+                  "on": "mouseover"
+                }
+              },
+              {
+                "name": "clicked",
+                "select": {"type": "point", "fields": ["Country"]}
+              }
+            ],
+            "transform": [{"filter": {"param": "hovered", "empty": false}}],
+            
+            "mark": {"type": "text", "fontWeight": "bold"},
+            "encoding": {
+              "x": {"field": "chng_eng", "type": "quantitative"},
+              "y": {"field": "chng_gdp", "type": "quantitative"},
+              "color": {
+                "condition": {"test": {"param": "hovered"}, "value": "orange"}
+              },
+              "text":{"field": "Year", "type": "quantitative"},
+              
+              "detail": {"field": "Country"},
+              "order": {"field": "Year"},
+              "opacity": {
+                "condition": {"test": {"param": "hovered"}, "value": 0.8},
+                "value": 0
+              },
+              "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {"field": "Year", "type": "quantitative"},
+            {
+              "field": "chng_eng",
+              "type": "quantitative",
+              "format": "0.3f",
+              "title": "Change in Energy Consumption"
+            },
+            {
+              "field": "chng_gdp",
+              "type": "quantitative",
+              "format": "0.3f",
+              "title": "Change in GDP"
+            }
+          ]
+            }
+          }
+          
+        ]
+      }
+      
+    ]
+  }

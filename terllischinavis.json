@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "repeat": {"row": ["% Renewable", "GDP US$", "2012 Co2 Emissions"]},
+  "resolve": {"scale": {"color": "independent"}},
+  "title": {
+    "text": "Percentage of Energy from Renewables, GDP and Emissions by Province",
+    "subtitle": "Source: SP Global, Wikipedia & University of East Angelia",
+    "subtitleFontSize": 10
+  },
+  "config": {"background": "#fff0d8"},
+  "spec": {
+    "width": 340,
+    "height": 250,
+    "data": {
+      "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/Chinageoshape.json",
+      "format": {"property": "features", "type": "json"}
+    },
+    "transform": [
+      {
+        "lookup": "properties.NAME_1",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/Chinatrellv2.csv"
+          },
+          "key": "Province",
+          "fields": ["% Renewable", "Available?", "GDP US$", "2012 Co2 Emissions"]
+        }
+      }
+    ],
+    "mark": "geoshape",
+    "projection": {"type": "mercator"},
+    "encoding": {
+      "color": {
+        "field": {"repeat": "row"},
+        "type": "quantitative",
+        "scale": {
+          "range": ["black", "darkorange", "orange", "gold", "goldred", "red"]
+        }
+      },
+      "tooltip": [
+        {"field": "properties.NAME_1", "title": "Province"},
+        {
+          "field": "% Renwables",
+          "title": "% Energy Coming from Renewable ",
+          "type": "quantitative",
+          "format": "%"
+        },
+        {
+          "field": "GDP US$",
+          "type": "ordinal",
+          "title": "GDP in Billions of US$"
+        },
+        {
+          "field": "2012 Co2 Emissions",
+          "type": "ordinal",
+          "title": "2012 Emissions in millions of tonnes"
+        }
+      ]
+    }
+  }
+}
