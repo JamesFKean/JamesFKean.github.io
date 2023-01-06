@@ -1,0 +1,145 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/intensitv4.csv"
+    },
+    "background": "#fff0d8",
+    "title": {
+      "text": "Carbon and GDP intensity",
+      "subtitle": [
+        "Source: World Bank and BP",
+        "Red line is measure of how many 100ths of a  megajule it take to make 1$ worth of GDP", "Orange line is measure of how many kg of Co2 per unit of energy economy produces."
+      ],
+      "subtitleFontSize": 10
+    },
+    "params": [{"name": "CCP_Target", "bind": {"input": "checkbox"}}],
+    "hconcat": [
+      {
+        "width": 340,
+        "height": 340,
+        "layer": [
+          {
+            "mark": {"type": "line", "interpolate": "cardinal"},
+            "encoding": {
+              "x": {
+                "field": "variable",
+                "type": "quantitative",
+                "scale": {"domain": [1967, 2060]},
+                "axis": {"format": ".0f"}
+              },
+              "y": {"field": "carbon_int", "type": "quantitative"},
+              "color": {"value": "darkorange"}
+            }
+          },
+          {
+            "mark": {"type": "line", "interpolate": "cardinal"},
+            "encoding": {
+              "x": {
+                "field": "variable",
+                "type": "quantitative",
+                "scale": {"domain": [1967, 2060]},
+                "axis": {"format": ".0f"}
+              },
+              "y": {"field": "eng_int", "type": "quantitative"},
+              "color": {"value": "darkred"}
+            }
+          },
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/goalv2.csv"
+            },
+           "mark": {"type":"line", "strokeDash": [8,4]},
+            "encoding": {
+              "x": {
+                "field": "variable",
+                "type": "quantitative",
+                "scale": {"domain": [1967, 2060]},
+                "axis": {"format": ".0f"}
+              },
+              "y": {"field": "carb_drp", "type": "quantitative", "axis": {"title": "Red=Energy to GDP Orange="}},
+              
+              "color": {"value": "darkorange"},
+              "opacity": {"condition": {"test": {"param": "CCP_Target"}}, "value": 0}
+            }
+          },
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/goalv2.csv"
+            },
+            "mark": {"type":"line", "strokeDash": [8,4]},
+            "encoding": {
+              "x": {
+                "field": "variable",
+                "type": "quantitative",
+                "scale": {"domain": [1967, 2060]},
+                "axis": {"format": ".0f"}
+              },
+              "y": {"field": "int_drp", "type": "quantitative"},
+              "color": {"value": "darkred"},
+              "opacity": {"condition": {"test": {"param": "CCP_Target"}}, "value": 0}
+            }
+          },
+          {
+            "mark": {
+              "type": "rule",
+              "color": "black",
+              "size": 1,
+              "strokeDash": [6, 4]
+            },
+            "encoding": {"x": {"datum": 2020, "bandPosition": 0}}
+          }
+        ]
+      },
+      {
+        "width": 340,
+        "height": 340,
+        "layer": [
+          {
+            "mark": {"type": "line", "interpolate": "cardinal"},
+            "encoding": {
+              "x": {
+                "field": "variable",
+                "type": "quantitative",
+                "scale": {"domain": [1967, 2020]},
+                "axis": {"format": ".0f"}
+              },
+              "y": {
+                "field": "pct_chng_int",
+                "axis": {"format": "%"},
+                "type": "quantitative"
+              },
+              "color": {"value": "darkred"}
+            }
+          },
+          {
+            "mark": {
+              "type": "rule",
+              "color": "black",
+              "size": 1,
+              "strokeDash": [6, 4]
+            },
+            "encoding": {"y": {"datum": 0, "bandPosition": 0}}
+          },
+          {
+            "mark": {"type": "line", "interpolate": "cardinal"},
+            "encoding": {
+              "x": {
+                "field": "variable",
+                "type": "quantitative",
+                "scale": {"domain": [1967, 2020]},
+                "axis": {"format": ".0f"}
+              },
+              "y": {
+                "field": "carbon_int_cng",
+                "axis": {"format": "%", "title": "Percentage Change in carbon and energy intensity"},
+                "type": "quantitative"
+              },
+              "color": {"value": "orange"}
+            }
+          
+          }
+         
+        ]
+      }
+    ]
+  }

@@ -3,8 +3,8 @@
   "repeat": {"row": ["% Renewable", "GDP US$", "2012 Co2 Emissions"]},
   "resolve": {"scale": {"color": "independent"}},
   "title": {
-    "text": "Percentage of Energy from Renewables, GDP and Emissions by Province",
-    "subtitle": "Source: SP Global, Wikipedia & University of East Angelia",
+    "text": "China's Geographic Challenge For Renewables",
+    "subtitle": ["Percentage of Energy from Renewables, GDP and Emissions by Province","Source: SP Global, Wikipedia & University of East Angelia"],
     "subtitleFontSize": 10
   },
   "config": {"background": "#fff0d8"},
@@ -20,7 +20,7 @@
         "lookup": "properties.NAME_1",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/Chinatrellv2.csv"
+            "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/Chinatrell.csv"
           },
           "key": "Province",
           "fields": ["% Renewable", "Available?", "GDP US$", "2012 Co2 Emissions"]
@@ -40,7 +40,7 @@
       "tooltip": [
         {"field": "properties.NAME_1", "title": "Province"},
         {
-          "field": "% Renwables",
+          "field": "% Renewable",
           "title": "% Energy Coming from Renewable ",
           "type": "quantitative",
           "format": "%"

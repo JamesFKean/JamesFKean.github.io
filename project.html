@@ -12,10 +12,9 @@
 
     <link rel="stylesheet" href="index3.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
-</head>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
 
 
@@ -38,30 +37,151 @@
     </div>
     <hr/>
 </div>
+<div class="alctt">
+<h3>How Has China's Energy Consumption Changed As Its Economy Has Grown?</h3>
+</div>
+<div class="alctt">
+    <h3 class="altxt"> Aims</h3>
+</div>
+<div class="alctt">
+    <span class="altxt">
 
-<h2>How Has China's Energy Consumption Changed As Its Economy Gas Grown?</h2>
+
+<p>Since the 1980s China’s economy has been on a path of rapid and consistent growth. This process has turned China from a small and relatively impoverished economy, to one of the worlds’ largest, all of which needed to be powered by a prodigious rise in national energy consumption. That had profound consequences not just for the global economy, but for future environmental sustainability. </p>
+  <p>This project will demonstrate the paths countries rates of change in energy consumption and GDP have taken overtime, to show how China’s growth story is unique in the modern world. This will give perspective on how consistent growth leads to large changes overtime. In terms of total energy consumption, output, and emissions. Showing also how not all countries have had the same success in the transmutation of energy consumption into GDP.  
+     </p>
+</span>
+</div>
 
 <div>
-    <div class="alctt">
-        <span class="altxt">
-            <h3>Bitcoin price range chart</h3>
-            <p>Displays the price of bitcoin</p>
+  
 </div>
-<div class="Chart" id="Chart6">  </div>
+<div class="alctt">
+        <span class="altxt">
+        <h3> path of development</h3>
+        <a href="https://colab.research.google.com/drive/1xpJfI3PoHdgEf_IP9mo77yb1N-VB_FgZ?usp=sharing" class="button2-underline-animation">Collab link</a>
+    </span> 
+    <div class="chart" id="Chart2">  </div>
 
+</div>
+
+<div class="alctt">
+    <div class="chart" id="Chart4">  </div>
+
+    <span class="altxt">
+    <h3> Heat map</h3>
+    <a href="https://colab.research.google.com/drive/1FOj9bpMCZrFltHC644ML_PYl52GBjyfM?usp=sharing" class="button2-underline-animation">Collab Link</a>
+
+</span>
+    
+</div>
+<div class="alctt">
+    <span class="altxt">
+        <h3> Rise in share of GDP</h3>
+        <a href="https://colab.research.google.com/drive/1Xuy9vgU53hviwXVAQ1zsjOVdpGQeZk32?usp=sharing" class="button2-underline-animation">Collab Link</a>
+        
+    </span>
+    </div>
+<div class="alctt">
+   
+<div class="chart" id="Chart6">  </div> </div>
+
+
+<div class="alctt">
+    
+    <h3 class="altxt"> Data Used</h3>
+</div>
+<div class="alctt">
+    <span class="altxt">
+       
+<p>The data used in this project, mainly comes from BP and the World Bank. Data from the World Bank has been accessed using their provided Python library that has an inbuilt API, allowing for the easy calling of data series for desired countries over desired intervals of time. It does however require a large amount of formatting to get into a tidy format, suitable for visualisations. </p>
+<p>The data from BP has been called from their website using requests. The data is first downloaded in excel format, then each of its separate sheets are passed to a Pandas Dataframe, with them being sorted by shape such time series data and stock data can be treated differently given the shape of the frame. The format of this allows for sheets to be called using a key value paring, which then allows for specific countries or data series to be called from that dictionary.</p>
+<p>The China geoshape trellis scrapes data from three sources, SP Global and a Wikipedia table in html format. Then a PDF file using Camelot.</p>
+<p>All data calling is automated, meaning that running the associated workbooks will get generate files that allow for recreation of the imbedded vega graphs. </p>
+</span>
+</div>
+<div class="alctt">
+    <span class="altxt">
+    <h3> Rapid Rise in energy consumption fueled by coal</h3>
+    <a href="https://colab.research.google.com/drive/1PCtMr1dMqQBBYumgqvfOn6oFFNnI3ojs?usp=sharing" class="button2-underline-animation">Collab Link</a>
+    <div class="chart" id="Chart1">  </div>
+
+</span> 
+
+</div>
+
+<div class="alctt">
+    <span class="altxt">
+    <h3>Fast growth with global ramification</h3>
+    <a href="https://colab.research.google.com/drive/17q4ye0pjg4Qja1r12AGWEl6VrmaE3lzz?usp=sharing" class="button2-underline-animation">Collab Link</a>
+    <div class="chart" id="Chart5">  </div>
+
+    </span> 
+
+</div>
+<div class="alctt">
+    
+    <h3 class="altxt">  Challenges in Data cleaning </h3>
+</div>
+<div class="alctt">
+    <span class="altxt">    
+<p>The largest hurdle to processing and cleaning the data was ensuring that the calling, sorting and structuring of BP energy data without having to resort to exporting to external files and undertaking processing outside of the collab environment. This involved filtering sheets by shape, as sheets containing time series data skip a different number of rows to those containing stock data. Filtering these sheets into separate elements is useful as it means that time series sheets can be called from the dictionary of data frames. Then frames can be manipulated to get data for all the countries or just one. </p>
+<p>Scarping the data used in the China trellis chart required some heavy cleaning due to the way in which it was nested within the HTML. However, using some of the built in Python commands allowed for the data to be formatted in a way that would allow for it to be passed to a Pandas object while retaining its table like structure. Manipulating the columns back in also required some cleaning, along with ensuring that all the provincial names matched between the three sources.</p>
+<p>Scraping from the PDF required trialing of several libraries, with Camelot eventually producing the best results.</p>
+</span>
+</div>
+<div class="alctt">
+
+    <span class="altxt">
+    <h3> China's Geography Problem </h3>
+    <a href="https://colab.research.google.com/drive/1XiY0jVtebyKqDuXQgUcZMUNfkLhBgKkE?usp=sharing" class="button2-underline-animation">Collab Link</a>
+    <div class="chart" id="Chart3">  </div>
+
+</span> 
+</div>
+<div class="alctt">
+    <span class="altxt">
+    <h3> China an outlier: Kmeans clustering for per person co2 emissions</h3>
+    <a href="https://colab.research.google.com/drive/1aGB7yV9OOK8VWsJDpL31uzxBnB6nluEw?usp=sharing" class="button2-underline-animation">Collab Link</a>
+    <div class="chart" id="Chart7">  </div>
+
+</span> 
+
+</div>
+
+<div class="alctt">
+    <span class="altxt">
+        <h3> Energy and carbon intensity intensity</h3>
+        </span>
+    <div class="chart" id="Chart8">  </div>
+    
+
+</div>
 
 </body>
 
 <!--Charts-->
 <script>
    
-    var myChart5 = "bartrellis.json";
-    var myChart6 = "zoom.json"
+    var myChart1 = "bartrellis.json";
+    var myChart2 = "zoom_scatterV3.json"
+    var myChart3 = "terllischinavis.json";
+    var myChart4 = "globalratechng.json";
+    var myChart5 = "co2stack.json";
+    var myChart6 = "globalgdpmap.json";
+    var myChart7 = "kmeans_china.json";
+    var myChart8 = "predict.json";
+
+
+    vegaEmbed('#Chart1', myChart1);
+    vegaEmbed('#Chart2', myChart2);
+    vegaEmbed('#Chart3', myChart3);
+    vegaEmbed('#Chart4', myChart4);
     vegaEmbed('#Chart5', myChart5);
     vegaEmbed('#Chart6', myChart6);
+    vegaEmbed('#Chart7', myChart7);
+    vegaEmbed('#Chart8', myChart8)
+
 </script>
-// var myChart1 = "zoom.json";
-   // var myChart2 = "trellischinavis.json";
-   // var myChart3 = "globalratechng.json";
-   // var myChart4 = "co2stack.json";
+   
 </html>

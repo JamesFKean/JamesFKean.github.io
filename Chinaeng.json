@@ -1,0 +1,60 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/scatterreg2.json"},
+    "height": 440,
+    "width": 440,
+    "background": "#fff0d8",
+    "title":{
+      "text": "Change in Energy Consumption against GDP Growth in China Since 1981",
+      "fontSize":10,
+      "anchor": "start",
+      "subtitle": "Source BP and The World Bank",
+      "subtitleFontSize": 8,
+      "subtitleFontWeight": "bold"
+    },
+    "layer": [
+      { 
+        "mark": {"type": "point", "filled": true},
+        "encoding": {
+          "x": {
+            "field": "Exajoules", "type": "quantitative",  "axis": {"title": "% Change in Energy Consumption", "grid": false}},
+          "y": {
+            "field": "GDP Growth", "type": "quantitative", "scale":{
+              "type": "pow", "domain": [2, 16]}, "axis": {
+                 "title": "% Change in GDP"}}, "color":{
+                  "field":"Exajoules", "type": "quantitative", "scale": {
+                    "range": ["orange", "red"]}, "legend": false}, "opacity": {"field": "Exajoules", "type": "quantitative", "scale":{"range":[0.5, 10]},
+           "legend": false}
+        }
+  
+      },
+      {
+        "mark": {"type": "line", "color": "darkorange"},
+        "transform": [
+          {"regression": "GDP Growth", "on": "Exajoules"}
+        ],
+        "encoding": {
+          "x": {"field": "Exajoules", "type": "quantitative"},
+          "y": {"field": "GDP Growth", "type": "quantitative"}
+        }
+      },
+      {
+        "transform": [
+          {
+            "regression": "GDP Growth",
+            "on": "Exajoules",
+            "params": true
+          },
+          {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+        ],
+        "mark": {
+          "type": "text",
+          "color": "firebrick",
+          "x": "width",
+          "align": "right",
+          "y": -5
+        },
+        "encoding": {"text": {"type": "nominal", "field": "R2"}}
+      }
+    ]
+  }

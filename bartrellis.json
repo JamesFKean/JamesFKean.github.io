@@ -1,185 +1,144 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-      "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/coalbar.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+        "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/china_breakdownv2.csv"},
+  "background": "#fff0d8",
+  "title": {"text": "Energy Input Trellis", "subtitle": "Source: BP"},
+  "transform": [
+   
+    {"calculate": "year(datum.Year)", "as": "year"},
+    {"filter": "datum.year>=minYear"},
+    {"filter": "datum.year<=maxYear"}
+  ],
+  "params": [
+    {
+      "name": "minYear",
+      "value": 1960,
+      "bind": {
+        "input": "range",
+        "min": 1960,
+        "max": 2020,
+        "step": 1,
+        "name": "Start year:"
+      }
     },
-    "background": "#fff0d8",
-    "title": {"text": "Energy Input Trellis", "subtitle": "Source: BP"},
-    "vconcat": [
-      {
-        "title": {
-          "text": "Exajoules of Energy Consumption by Fuel Type: 20 Largest CO2 Polluters.",
-          "anchor": "start",
-          "subtitle": "China generates more energy from coal than the 19 next largest CO2 emitters combined.",
-          "subtitleFontSize": 10
-        },
-        "width": 380,
-        "mark": "bar",
-        "encoding": {
-          "x": {
-            "field": "Country",
-            "sort": {"field": "Total", "order": "ascending"}
+    {
+      "name": "maxYear",
+      "value": 2021,
+      "bind": {
+        "input": "range",
+        "min": 1961,
+        "max": 2020,
+        "step": 1,
+        "name": "End year:"
+      }
+    }],
+  "vconcat": [
+    {
+      "width": 380,
+     
+      "layer": [
+        {
+          "title": {
+            "text": "Exajoules of Energy Consumption by Fuel Type: China",
+            "anchor": "start",
+            "subtitle": "Exajoules of energy consumed in China triples in twenty years.",
+            "subtitleFontSize": 10
           },
-          "y": {"field": "Exajoules", "aggregate": "sum", "title": "Exajoules"},
-          "color": {
-            "field": "Fuel type",
-            "scale": {
-              "domain": [
-                "Coal",
-                "Oil",
-                "Renewables",
-                "Hydro electric",
-                "Nuclear energy",
-                "Natural Gas"
-              ],
-              "range": [
-                "darkred",
-                "Orange",
-                "darkorange",
-                "#7C521F",
-                "#997C2E",
-                "#B5A437",
-                "#A46C4C",
-                "#824d2f"
-              ]
-            }
-          },
-          "tooltip": [
-            {"field": "Fuel type", "type": "nominal"},
-            {"field": "Exajoules", "type": "quantitative", "format": "0.2f"}
-          ]
-        }
-      },
-      {
-        "title": {
-          "text": "Share of Energy Consumption by Fuel Type: 20 Largest CO2 Polluters.",
-          "anchor": "start",
-          "subtitleFontSize": 10
-        },
-        "mark": "bar",
-        "encoding": {
-          "x": {
-            "field": "Country",
-            "sort": {"field": "Total", "order": "ascending"}
-          },
-          "y": {
-            "field": "Percentages",
-            "aggregate": "sum",
-            "axis": {"format": "%"},
-            "title": "Share of total energy consumed by type"
-          },
-          "color": {"field": "Fuel type"},
-          "tooltip": [
-            {"field": "Fuel type", "type": "nominal"},
-            {"field": "Percentages", "type": "quantitative", "format": "%"}
-          ]
-        }
-      },
-      {
-        "width": 380,
-        "data": {
-          "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/china_breakdownv2.csv"
-        },
-        "layer": [
-          {
-            "title": {
-              "text": "Exajoules of Energy Consumption by Fuel Type: China",
-              "anchor": "start",
-              "subtitle": "Exajoules of energy consumed in China triples in twenty years.",
-              "subtitleFontSize": 10
+          "mark": "area",
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "temporal"
             },
-            "mark": "area",
-            "encoding": {
-              "x": {
-                "field": "Year",
-                "type": "temporal",
-                "axis": {"format": {"type": "%y"}}
-              },
-              "y": {
-                "field": "value",
-                "type": "quantitative",
-                "sort": {"field": "China Percentages"},
-                "title": "Exajoules"
-              },
-              "color": {"field": "Exajoules", "legend": {"symbolOpacity": 1, "title": "Fuel Type"}},
-              "opacity": {"value": 0.4},
-              "tooltip": [
-                {"field": "Exajoules"},
-                {"field": "Year", "type": "temporal"}
-              ]
-            }
-          },
-          {
-            "title": {
-              "text": "Chinese Energy Consumption by Fuel Source",
-              "anchor": "start",
-              "subtitle": "Source: BP",
-              "subtitleFontSize": 10
+            "y": {
+              "field": "value",
+              "type": "quantitative",
+              "sort": {"field": "China Percentages"},
+              "title": "Exajoules"
             },
-            "mark": {"type": "line", "point": false},
-            "encoding": {
-              "x": {"field": "Year", "type": "temporal"},
-              "y": {
-                "field": "value",
-                "type": "quantitative",
-                "sort": {"field": "China Percentages"},
-                "stack": "zero"
-              },
-              "tooltip": [{"field": "Exajoules"}],
-              "color": {
-                "field": "Exajoules",
-                "scale": {
-                  "domain": [
-                    "Coal",
-                    "Oil",
-                    "Renewables",
-                    "Hydro electric",
-                    "Nuclear energy",
-                    "Natural Gas",
-                    "Other"
-                  ],
-                  "range": [
-                    "darkred",
-                    "Orange",
-                    "darkorange",
-                    "#7C521F",
-                    "#997C2E",
-                    "#B5A437",
-                    "#A46C4C",
-                    "#824d2f"
-                  ]
-                }
+            "color": {
+              "field": "Exajoules",
+              "legend": {"symbolOpacity": 1, "title": "Fuel Type"}
+            },
+            "opacity": {"value": 0.4},
+            "tooltip": [
+              {"field": "Exajoules"},
+              {"field": "Year", "type": "temporal"}
+            ]
+          }
+        },
+        {
+          "title": {
+            "text": "Chinese Energy Consumption by Fuel Source",
+            "anchor": "start",
+            "subtitle": "Source: BP",
+            "subtitleFontSize": 10
+          },
+          "mark": {"type": "line", "point": false},
+          "encoding": {
+            "x": {"field": "Year", "type": "temporal"},
+            "y": {
+              "field": "value",
+              "type": "quantitative",
+              "sort": {"field": "China Percentages"},
+              "stack": "zero"
+            },
+            "tooltip": [{"field": "Exajoules"}],
+            "color": {
+              "field": "Exajoules",
+              "scale": {
+                "domain": [
+                  "Coal",
+                  "Oil",
+                  "Renewables",
+                  "Hydro electric",
+                  "Nuclear energy",
+                  "Natural Gas",
+                  "Other"
+                ],
+                "range": [
+                  "darkred",
+                  "Orange",
+                  "darkorange",
+                  "#7C521F",
+                  "#997C2E",
+                  "#B5A437",
+                  "#A46C4C",
+                  "#824d2f"
+                ]
               }
             }
           }
-        ]
-      },
-      {
-        "width": 380,
-        "data": {
-          "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/china_breakdownv2.csv"
-        },
-        "title": {
-          "text": "Share of Fuel Consumed by Type in China",
-          "subtitle": ["Coals declining share of input."],
-          "subtitleFontSize": 10,
-          "anchor": "start"
-        },
-        "mark": {"type": "line", "interpolate": "cardinal", "strokeDash": [8, 4]},
-        "encoding": {
-          "x": {"field": "Year", "type": "temporal"},
-          "y": {
-            "field": "China Percentages",
-            "type": "quantitative",
-            "axis": {"format": "%"},
-            "title": "Share of fuel consumed by type"
-          },
-          "color": {"field": "Exajoules"},
-          "tooltip": [
-            {"field": "Exajoules"},
-            {"field": "China Percentages", "format": "%"}
-          ]
         }
+      ]
+    },
+    {
+      "width": 380,
+      
+      "title": {
+        "text": "Share of Fuel Consumed by Type in China",
+        "subtitle": ["Coals declining share of input."],
+        "subtitleFontSize": 10,
+        "anchor": "start"
+      },
+      "mark": {"type": "line", "interpolate": "cardinal", "strokeDash": [8, 4]},
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal"},
+        "y": {
+          "field": "China Percentages",
+          "type": "quantitative",
+          "axis": {"format": "%"},
+          "title": "Share of fuel consumed by type"
+        },
+        "color": {"field": "Exajoules"},
+        "tooltip": [
+          {"field": "Exajoules"},
+          {"field": "China Percentages", "format": "%"}
+        ]
       }
-    ]
-  }
+    }
+   
+    
+  ]
+}
