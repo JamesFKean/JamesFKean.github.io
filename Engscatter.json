@@ -1,10 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A scatterplot showing GDP per capita and energy usage",
+  "description": "Energy Usage per Capita and GDP per Capita",
   "title": {
-    "text": "Eneregy Usage Per Capita and GDP Per Capita",
+    "text": "Energy Usage per Capita and GDP per Capita",
     "anchor": "start",
-    "subtitle": ["Source: World Bank","In PPP (constant 2017 international $) and KWH/person. Size of Bubble Indicates Population"],
+    "subtitle": [
+      "Source: World Bank",
+      "In PPP (constant 2017 international $) and KWH/person. Size of Bubble Indicates Population"
+    ],
     "subtitleFontSize": 10
   },
   "config": {"background": "#fff0d8", "legend": {"disable": true}},
@@ -582,11 +585,16 @@
       },
       {
         "field": "Primary energy consumption per capita (kWh/person)",
-        "title": "Per Person Energy Consumption", "format": ".02f"
+        "title": "Per Person Energy Consumption",
+        "format": ".02f"
       },
       {"title": "Population", "field": "Population (historical estimates)"}
     ],
-    "size": {"field": "Population (historical estimates)", "sort": "ascending", "scale": {"type": "sqrt" }}
+    "size": {
+      "field": "Population (historical estimates)",
+      "sort": "ascending",
+      "scale": {"type": "sqrt"}
+    }
   },
   "width": 320,
   "height": 340

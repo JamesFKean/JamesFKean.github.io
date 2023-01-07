@@ -56,7 +56,7 @@
           "scale": {
             "range": ["black", "darkorange", "orange", "gold", "goldred", "red"]
           },
-          "legend": {"title": "Observations"}
+          "legend": {"title": "# Of Observations"}
         },
         "tooltip": [{"field": "__count", "title": "Observations"}]
       }

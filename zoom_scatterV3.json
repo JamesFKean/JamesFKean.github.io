@@ -3,7 +3,7 @@
   "title": {
     "text": "Global Rates of Change: China in Focus Interactive Chart",
     "anchor": "start",
-    "subtitle": "Source: World Bank. Black lines indicate year mean.",
+    "subtitle": ["Click, hover, zoom interactivity.Black lines indicate year mean.", "Source: World Bank."],
     "subtitleFontSize": 10
   },
   "params": [

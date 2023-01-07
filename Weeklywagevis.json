@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Bar chart with text labels. Set domain to make the frame cover the labels.",
   "title":{
-  "text": "Weekly Income in the UK by Industry. Is there outsized demand for data proffesionals? ",
+  "text": "Weekly Income in the UK by Industry. Is there outsized demand for data professionals? ",
   "fontSize": 11,
   "anchor": "start",
   "subtitle": "Source: ONS & GlassDoor",

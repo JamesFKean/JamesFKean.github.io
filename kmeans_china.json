@@ -1,15 +1,21 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-        "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/pp_co2pt1v1.csv"
-      },
-      
+    "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/pp_co2pt1v1.csv"
+  },
   "params": [{"name": "Names", "bind": {"input": "checkbox"}}],
   "background": "#fff0d8",
-  "title": {"text": "Kmeans Grouping: Grouping Countries by Growth Rates 1990-2014", "subtitle": ["Source: World Bank", "CO2 measured in metric tonnes. Orange dotted line is line of best fit."],"subtitleFontSize": 10},
+  "title": {
+    "text": "Kmeans Grouping: Grouping Countries by Energy and GDP Growth Rates 1990-2014",
+    "fontSize": 12,
+    "subtitle": [
+      "Source: World Bank",
+      " Orange dotted line is line of best fit."
+    ],
+    "subtitleFontSize": 10
+  },
   "vconcat": [
     {
-      
       "width": 340,
       "height": 340,
       "transform": [
@@ -41,11 +47,7 @@
               "field": "Groups",
               "scale": {
                 "range": ["Orange", "black", "red", "darkred", "#829c24"],
-                "domain": [
-                  "Cluster 0",
-                  "Cluster 1",
-                  "Cluster 2"
-                ]
+                "domain": ["Cluster 0", "Cluster 1", "Cluster 2"]
               }
             },
             "size": {"value": 40},
@@ -56,7 +58,8 @@
             ]
           }
         },
-        { "transform": [{"filter": "datum.Country == 'China'"}],
+        {
+          "transform": [{"filter": "datum.Country == 'China'"}],
           "mark": {
             "type": "text",
             "yOffset": -8,
@@ -79,7 +82,8 @@
             "text": {"field": "Country"}
           }
         },
-         { "transform": [{"filter": "datum.Country != 'China'"}],
+        {
+          "transform": [{"filter": "datum.Country != 'China'"}],
           "mark": {
             "type": "text",
             "yOffset": -8,
@@ -103,49 +107,43 @@
           }
         },
         {
-      "mark": {
-        "type": "line",
-        "color": "orange",
-        "strokeDash": [8,4]
-        
-      },
-      "transform": [
-        {
-          "regression": "eng_mean",
-          "on": "mean_gdp"
-          
+          "mark": {"type": "line", "color": "orange", "strokeDash": [8, 4]},
+          "transform": [{"regression": "eng_mean", "on": "mean_gdp"}],
+          "encoding": {
+            "x": {
+              "field": "mean_gdp",
+              "type": "quantitative",
+              "axis": {"format": "%"}
+            },
+            "y": {
+              "field": "eng_mean",
+              "type": "quantitative",
+              "axis": {"format": "%"}
+            },
+            "opacity": {"condition": {"test": {"param": "Names"}, "value": 0}}
+          }
         }
-      ],
-      "encoding": {
-        "x": {
-          "field": "mean_gdp",
-          "type": "quantitative",
-          "axis": {"format": "%"}
-        },
-        "y": {
-          "field": "eng_mean",
-          "type": "quantitative",
-          "axis": {"format": "%"}
-        },
-        "opacity": {"condition":{"test":{"param": "Names"}, "value": 0}}
-      }
-    }
       ]
     },
     {
       "data": {
         "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/pp_co2pt2v5.csv"
       },
+      "title": {
+        "text": "Clusters Rate of CO2 output per person",
+        "anchor": "start",
+        "subtitle": "CO2 measured in metric tonnes.",
+        "subtitleFontSize": 10
+      },
       "transform": [
         {
           "calculate": "{'0' : 'Cluster 0', '1': 'Cluster 1', '2': 'Cluster 2', '3': 'Cluster 3', '4': 'Cluster 4','5': 'China'}[datum.Cluster2]",
           "as": "Groups2"
         }
-        
       ],
       "width": 340,
       "height": 340,
-      "mark": {"type": "line", "interpolate": "basis-open", "point": true},
+      "mark": {"type": "line", "interpolate": "cardinal", "point": true},
       "encoding": {
         "x": {"field": "variable", "type": "temporal", "title": "Year"},
         "y": {
@@ -165,13 +163,9 @@
               "darkred",
               "#997C2E"
             ],
-            "domain": [
-              "China",
-              "Cluster 0",
-              "Cluster 1",
-              "Cluster 2"
-            ]
-          }, "legend": {"title": "Clusters"}
+            "domain": ["China", "Cluster 0", "Cluster 1", "Cluster 2"]
+          },
+          "legend": {"title": "Clusters"}
         }
       }
     }
