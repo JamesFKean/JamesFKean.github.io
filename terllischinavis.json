@@ -1,13 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "repeat": {"row": ["% Of Energy From Renewables", "GDP US$ in Billions", "2012 CO2 Emissions Millions of Tonnes"]},
+  "repeat": {"row": ["% Renewable", "GDP US$", "2012 Co2 Emissions"]},
   "resolve": {"scale": {"color": "independent"}},
   "title": {
-    "text": "China's Geographic Challenge For Renewables",
-    "subtitle": [
-      "Percentage of Energy from Renewables, GDP and Emissions by Province",
-      "Source: SP Global, Wikipedia & University of East Angelia"
-    ],
+    "text": "Percentage of Energy from Renewables, GDP and Emissions by Province",
+    "subtitle": "Source: SP Global, Wikipedia & University of East Angelia",
     "subtitleFontSize": 10
   },
   "config": {"background": "#fff0d8"},
@@ -26,12 +23,7 @@
             "url": "https://raw.githubusercontent.com/JamesFKean/JamesFKean.github.io/main/Chinatrellv4.csv"
           },
           "key": "Province",
-          "fields": [
-            "% Of Energy From Renewables",
-            "targ",
-            "GDP US$ in Billions",
-            "2012 CO2 Emissions Millions of Tonnes"
-          ]
+          "fields": ["% Renewable", "Available?", "GDP US$", "2012 Co2 Emissions"]
         }
       }
     ],
@@ -43,28 +35,27 @@
         "type": "quantitative",
         "scale": {
           "range": ["black", "darkorange", "orange", "gold", "goldred", "red"]
-        }, 
-        "legend": {"titleAlign": "left", "titleBaseline":"line-bottom", "titleFontSize": 9}
+        }
       },
       "tooltip": [
         {"field": "properties.NAME_1", "title": "Province"},
         {
-          "field": "% Of Energy From Renewables",
+          "field": "% Renewable",
           "title": "% Energy Coming from Renewable ",
           "type": "quantitative",
           "format": "%"
         },
         {
-          "field": "GDP US$ in Billions",
+          "field": "GDP US$",
           "type": "ordinal",
           "title": "GDP in Billions of US$"
         },
         {
-          "field": "2012 CO2 Emissions Millions of Tonnes",
+          "field": "2012 Co2 Emissions",
           "type": "ordinal",
           "title": "2012 Emissions in millions of tonnes"
-        },    
-        {"field": "targ", "title": "Met Governmants 2020 Renewables Target?"}  ]
+        }
+      ]
     }
   }
 }
