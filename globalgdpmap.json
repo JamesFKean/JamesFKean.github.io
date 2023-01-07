@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Share of global GDP by Country Trellis Chart: China an increasingly large player",
+    "text": "Share of global GDP by Country Trellis Chart: China an Increasingly Large Player",
     "subtitle": "Source: World Bank",
     "anchor": "start",
     "subtitleFontSize": 10,
