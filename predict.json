@@ -20,10 +20,10 @@
   "params": [
   {
       "name": "minYear",
-      "value": 1960,
+      "value": 1965,
       "bind": {
         "input": "range",
-        "min": 1960,
+        "min": 1965,
         "max": 2020,
         "step": 1,
         "name": "Start year:"
@@ -33,18 +33,18 @@
       "value": 2021,
       "bind": {
         "input": "range",
-        "min": 1961,
+        "min": 1965,
         "max": 2020,
         "step": 1,
         "name": "End year:"
       }
     }],
-  "vconcat": [
+  "hconcat": [
     {
       "width": 400,
       "height": 300,
       "layer": [
-        {
+        { "title": {"text": "Carbon and Energy Intensity", "anchor": "start", "fontWeight": "bold"},
           "mark": {"type": "line", "interpolate": "cardinal"},
           "encoding": {
             "x": {
@@ -77,7 +77,7 @@
       "width": 400,
       "height": 300,
       "layer": [
-        {
+        {"title": {"text": "Rates of Change in Carbon and Energy Intensity", "anchor": "start", "fontWeight": "bold"},
           "mark": {"type": "line", "interpolate": "cardinal"},
           "encoding": {
             "x": {
