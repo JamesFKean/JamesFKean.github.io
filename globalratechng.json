@@ -1,14 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#fff0d8",
-  "width": 421,
+  "width": 400,
   "height": 400,
   "title": {
     "align": "left",
-    "text": "Rate of change in energy consumption against GDP growth annualy for 52 countries",
+    "text": "Heat Map Showing the Positive Relationship Between Change in GDP and Energy Consumption",
     "anchor": "start",
     "subtitle": [
-      "Observations from 1981-2021. Grey lines repesent means of each growth rate.",
+      "Observations from 1981-2021 for 52 countries. Grey lines represent means of each growth rate.",
       "Orange lines represent Chinese growth rate means.",
       "Source: World Bank and BP"
     ],
@@ -23,26 +23,28 @@
       "mark": "rect",
       "encoding": {
         "x": {
+          "bin": {"maxbins": 20},
+          "field": "pct_chn_exa",
+          "type": "quantitative",
+          "scale": {"domain": [-0.18, 0.25]},
+          "axis": {
+            "labelSeparation": {"expr": "5"},
+            "format": "%",
+            "title": "Change in Energy Consumption",
+            "grid": true,
+            "gridWidth": 0.1,
+            "gridColor": "black"
+              
+          }
+        },
+        "y": {
           "bin": {"maxbins": 30},
           "field": "GDP Growth Rates",
           "type": "quantitative",
           "axis": {
-            "labelSeparation": {"expr": "5"},
-            "format": "%",
-            "title": "GDP Growth",
-            "grid": true,
-            "gridWidth": 0.1,
-            "gridColor": "black"
-          }
-        },
-        "y": {
-          "bin": {"maxbins": 20},
-          "field": "pct_chn_exa",
-          "type": "quantitative",
-          "axis": {
             "labelSeparation": {"expr": "3"},
             "format": "%",
-            "title": "Change in Energy Consumption",
+            "title": "GDP Growth",
             "grid": true,
             "gridWidth": 0.1,
             "gridColor": "black"
@@ -69,8 +71,9 @@
       "encoding": {
         "x": {
           "aggregate": "mean",
-          "field": "GDP Growth Rates",
-          "type": "quantitative"
+          "field": "pct_chn_exa",
+          "type": "quantitative",
+          "scale": {"domain": [-0.18, 0.25]}
         },
         "color": {"value": "darkgrey"},
         "opacity": {"condition": {"test": {"param": "Means"}}, "value": 0}
@@ -86,7 +89,7 @@
       "encoding": {
         "y": {
           "aggregate": "mean",
-          "field": "pct_chn_exa",
+          "field": "GDP Growth Rates",
           "type": "quantitative"
         },
         "color": {"value": "darkgrey"},
@@ -102,7 +105,7 @@
         "strokeWidth": 2
       },
       "encoding": {
-        "y": {"aggregate": "mean", "field": "pct_chn_exa"},
+        "y": {"aggregate": "mean", "field": "GDP Growth Rates"},
         "opacity": {"condition": {"test": {"param": "Means"}}, "value": 0},
         "color": {"value": "darkorange"}
       }
@@ -116,7 +119,7 @@
         "strokeWidth": 2
       },
       "encoding": {
-        "x": {"aggregate": "mean", "field": "GDP Growth Rates"},
+        "x": {"aggregate": "mean", "field": "pct_chn_exa", "scale": {"domain": [-0.18, 0.25]}},
         "opacity": {"condition": {"test": {"param": "Means"}}, "value": 0},
         "color": {"value": "darkorange"}
       }
