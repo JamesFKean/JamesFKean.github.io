@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "IMF Lending outsanding ",
-    "subtitle": "Inflation adjusted  credit outstanding to all members of the IMF in USD: source (IMF)",
+    "subtitle": "Inflation adjusted  credit outstanding to all members of the IMF in USD: source (IMF) and World Bank",
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
     "anchor": "start",
