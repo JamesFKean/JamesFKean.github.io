@@ -24,7 +24,7 @@
     "y": {
       "field": "billions",
       "type": "quantitative",
-      "title": "Loans Outstanding in Billions"
+      "title": "Billions Of USD"
     ,"axis": {
          "title": "Year",
          "grid": false,
