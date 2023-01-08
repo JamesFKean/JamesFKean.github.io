@@ -92,7 +92,8 @@
           "legend": {
             "symbolFillColor": "darkred",
             "symbolStrokeColor": "darkred",
-            "title": "Size=CO2 Output"
+            "title": "Size=CO2 Output Million Tonnes",
+            "titleFontSize": 8
           },
           "title": "Total CO2 Output",
           "scale": {"type": "sqrt"}
