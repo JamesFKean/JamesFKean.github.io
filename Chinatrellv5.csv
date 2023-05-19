@@ -1,0 +1,121 @@
+,Province,Type,value,targ
+0,Anhui,% Of Energy From Renewables,0.193,Yes
+1,Anhui,ems_pct,0.031001899169259,Yes
+2,Anhui,GDP US$ in Billions,676.23,Yes
+3,Anhui,2012 CO2 Emissions Millions of Tonnes,266.08,Yes
+4,Beijing,% Of Energy From Renewables,0.198,Yes
+5,Beijing,2012 CO2 Emissions Millions of Tonnes,82.94,Yes
+6,Beijing,ems_pct,0.009663625665583,Yes
+7,Beijing,GDP US$ in Billions,633.9,Yes
+8,Chongqing,% Of Energy From Renewables,0.455,Yes
+9,Chongqing,GDP US$ in Billions,439.09,Yes
+10,Chongqing,2012 CO2 Emissions Millions of Tonnes,109.0,Yes
+11,Chongqing,ems_pct,0.012699966211099,Yes
+12,Fujian,GDP US$ in Billions,768.34,Yes
+13,Fujian,ems_pct,0.0236557260535728,Yes
+14,Fujian,2012 CO2 Emissions Millions of Tonnes,203.03,Yes
+15,Fujian,% Of Energy From Renewables,0.19,Yes
+16,Gansu,2012 CO2 Emissions Millions of Tonnes,140.75,No
+17,Gansu,GDP US$ in Billions,161.24,No
+18,Gansu,% Of Energy From Renewables,0.469,No
+19,Gansu,ems_pct,0.0163992682955247,No
+20,Guangdong,GDP US$ in Billions,1947.15,Yes
+21,Guangdong,ems_pct,0.0557481911286658,Yes
+22,Guangdong,% Of Energy From Renewables,0.29,Yes
+23,Guangdong,2012 CO2 Emissions Millions of Tonnes,478.47,Yes
+24,Guangxi,2012 CO2 Emissions Millions of Tonnes,158.55,Yes
+25,Guangxi,GDP US$ in Billions,389.45,Yes
+26,Guangxi,ems_pct,0.0184732077318326,Yes
+27,Guangxi,% Of Energy From Renewables,0.431,Yes
+28,Guizhou,GDP US$ in Billions,308.32,Yes
+29,Guizhou,% Of Energy From Renewables,0.361,Yes
+30,Guizhou,ems_pct,0.0254873175108066,Yes
+31,Guizhou,2012 CO2 Emissions Millions of Tonnes,218.75,Yes
+32,Hainan,ems_pct,0.0050869772915283,Yes
+33,Hainan,GDP US$ in Billions,101.92,Yes
+34,Hainan,% Of Energy From Renewables,0.175,Yes
+35,Hainan,2012 CO2 Emissions Millions of Tonnes,43.66,Yes
+36,Hebei,ems_pct,0.0590653290922436,Yes
+37,Hebei,2012 CO2 Emissions Millions of Tonnes,506.94,Yes
+38,Hebei,% Of Energy From Renewables,0.176,Yes
+39,Hebei,GDP US$ in Billions,635.81,Yes
+40,Heilongjiang,2012 CO2 Emissions Millions of Tonnes,326.03,Yes
+41,Heilongjiang,GDP US$ in Billions,234.22,Yes
+42,Heilongjiang,ems_pct,0.0379868805853635,Yes
+43,Heilongjiang,% Of Energy From Renewables,0.233,Yes
+44,Henan,ems_pct,0.0483344402111223,Yes
+45,Henan,% Of Energy From Renewables,0.29,Yes
+46,Henan,GDP US$ in Billions,926.97,Yes
+47,Henan,2012 CO2 Emissions Millions of Tonnes,414.84,Yes
+48,Hubei,GDP US$ in Billions,787.27,Yes
+49,Hubei,% Of Energy From Renewables,0.415,Yes
+50,Hubei,2012 CO2 Emissions Millions of Tonnes,234.02,Yes
+51,Hubei,ems_pct,0.0272664779148752,Yes
+52,Hunan,2012 CO2 Emissions Millions of Tonnes,207.34,Yes
+53,Hunan,% Of Energy From Renewables,0.4639999999999999,Yes
+54,Hunan,ems_pct,0.0241578990294429,Yes
+55,Hunan,GDP US$ in Billions,725.09,Yes
+56,Jiangsu,2012 CO2 Emissions Millions of Tonnes,493.63,Yes
+57,Jiangsu,GDP US$ in Billions,1831.73,Yes
+58,Jiangsu,% Of Energy From Renewables,0.186,Yes
+59,Jiangsu,ems_pct,0.0575145350530718,Yes
+60,Jiangxi,GDP US$ in Billions,466.25,Yes
+61,Jiangxi,% Of Energy From Renewables,0.293,Yes
+62,Jiangxi,2012 CO2 Emissions Millions of Tonnes,114.79,Yes
+63,Jiangxi,ems_pct,0.0133745790951565,Yes
+64,Jilin,GDP US$ in Billions,208.35,Yes
+65,Jilin,% Of Energy From Renewables,0.299,Yes
+66,Jilin,2012 CO2 Emissions Millions of Tonnes,213.63,Yes
+67,Jilin,ems_pct,0.0248907686392393,Yes
+68,Liaoning,2012 CO2 Emissions Millions of Tonnes,474.3,Yes
+69,Liaoning,ems_pct,0.0552623300360026,Yes
+70,Liaoning,% Of Energy From Renewables,0.191,Yes
+71,Liaoning,GDP US$ in Billions,434.21,Yes
+72,Nei Mongol,% Of Energy From Renewables,0.241,Yes
+73,Nei Mongol,GDP US$ in Billions,322.92,Yes
+74,Nei Mongol,2012 CO2 Emissions Millions of Tonnes,656.67,Yes
+75,Nei Mongol,ems_pct,0.0765108881820406,Yes
+76,Ningxia Hui,GDP US$ in Billions,71.19,Yes
+77,Ningxia Hui,% Of Energy From Renewables,0.288,Yes
+78,Ningxia Hui,ems_pct,0.0177088794901371,Yes
+79,Ningxia Hui,2012 CO2 Emissions Millions of Tonnes,151.99,Yes
+80,Qinghai,2012 CO2 Emissions Millions of Tonnes,45.38,Yes
+81,Qinghai,GDP US$ in Billions,52.68,Yes
+82,Qinghai,ems_pct,0.0052873804280704,Yes
+83,Qinghai,% Of Energy From Renewables,0.7709999999999999,Yes
+84,Shaanxi,GDP US$ in Billions,469.11,Yes
+85,Shaanxi,2012 CO2 Emissions Millions of Tonnes,323.27,Yes
+86,Shaanxi,% Of Energy From Renewables,0.267,Yes
+87,Shaanxi,ems_pct,0.0376653034592843,Yes
+88,Shandong,2012 CO2 Emissions Millions of Tonnes,816.13,Yes
+89,Shandong,% Of Energy From Renewables,0.158,Yes
+90,Shandong,ems_pct,0.0950901231547182,Yes
+91,Shandong,GDP US$ in Billions,1308.04,Yes
+92,Shanghai,ems_pct,0.0180118144639798,Yes
+93,Shanghai,2012 CO2 Emissions Millions of Tonnes,154.59,Yes
+94,Shanghai,% Of Energy From Renewables,0.319,Yes
+95,Shanghai,GDP US$ in Billions,680.27,Yes
+96,Shanxi,2012 CO2 Emissions Millions of Tonnes,684.23,Yes
+97,Shanxi,ems_pct,0.0797219989047735,Yes
+98,Shanxi,GDP US$ in Billions,355.6,Yes
+99,Shanxi,% Of Energy From Renewables,0.249,Yes
+100,Sichuan,GDP US$ in Billions,847.68,Yes
+101,Sichuan,ems_pct,0.0243443205518077,Yes
+102,Sichuan,2012 CO2 Emissions Millions of Tonnes,208.94,Yes
+103,Sichuan,% Of Energy From Renewables,0.804,Yes
+104,Tianjin,GDP US$ in Billions,247.06,Yes
+105,Tianjin,% Of Energy From Renewables,0.195,Yes
+106,Tianjin,2012 CO2 Emissions Millions of Tonnes,123.02,Yes
+107,Tianjin,ems_pct,0.0143334848008202,Yes
+108,Xinjiang,ems_pct,0.0322695655213394,No
+109,Xinjiang,% Of Energy From Renewables,0.2019999999999999,No
+110,Xinjiang,2012 CO2 Emissions Millions of Tonnes,276.96,No
+111,Xinjiang,GDP US$ in Billions,251.6,No
+112,Yunnan,% Of Energy From Renewables,0.775,Yes
+113,Yunnan,ems_pct,0.0163375161662413,Yes
+114,Yunnan,GDP US$ in Billions,427.33,Yes
+115,Yunnan,2012 CO2 Emissions Millions of Tonnes,140.22,Yes
+116,Zhejiang,% Of Energy From Renewables,0.1889999999999999,Yes
+117,Zhejiang,ems_pct,0.036651636431426,Yes
+118,Zhejiang,2012 CO2 Emissions Millions of Tonnes,314.57,Yes
+119,Zhejiang,GDP US$ in Billions,1157.23,Yes
